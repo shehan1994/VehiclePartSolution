@@ -16,5 +16,16 @@ namespace VehiclePartSolution
         {
             InitializeComponent();
         }
+
+        private void btnCarOrder_Click(object sender, EventArgs e)
+        {
+            CarManage car = new CarManage();
+            car.Show();
+        }
+
+        private void btnCarPartsOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

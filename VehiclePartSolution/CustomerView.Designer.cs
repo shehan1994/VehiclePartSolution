@@ -28,33 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnCarOrder = new System.Windows.Forms.Button();
+            this.btnCarPartsOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // btnCarOrder
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(318, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "customer";
+            this.btnCarOrder.BackColor = System.Drawing.Color.White;
+            this.btnCarOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarOrder.Location = new System.Drawing.Point(53, 50);
+            this.btnCarOrder.Name = "btnCarOrder";
+            this.btnCarOrder.Size = new System.Drawing.Size(151, 34);
+            this.btnCarOrder.TabIndex = 0;
+            this.btnCarOrder.Text = "Place Car Order";
+            this.btnCarOrder.UseVisualStyleBackColor = false;
+            this.btnCarOrder.Click += new System.EventHandler(this.btnCarOrder_Click);
+            // 
+            // btnCarPartsOrder
+            // 
+            this.btnCarPartsOrder.BackColor = System.Drawing.Color.White;
+            this.btnCarPartsOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarPartsOrder.Location = new System.Drawing.Point(239, 50);
+            this.btnCarPartsOrder.Name = "btnCarPartsOrder";
+            this.btnCarPartsOrder.Size = new System.Drawing.Size(192, 34);
+            this.btnCarPartsOrder.TabIndex = 1;
+            this.btnCarPartsOrder.Text = "Place Car Parts Order";
+            this.btnCarPartsOrder.UseVisualStyleBackColor = false;
+            this.btnCarPartsOrder.Click += new System.EventHandler(this.btnCarPartsOrder_Click);
             // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(481, 327);
+            this.Controls.Add(this.btnCarPartsOrder);
+            this.Controls.Add(this.btnCarOrder);
             this.Name = "CustomerView";
-            this.Text = "Form1";
+            this.Text = "Customer Portal";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCarOrder;
+        private System.Windows.Forms.Button btnCarPartsOrder;
     }
 }
