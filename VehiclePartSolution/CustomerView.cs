@@ -25,7 +25,8 @@ namespace VehiclePartSolution
 
         private void btnCarPartsOrder_Click(object sender, EventArgs e)
         {
-
+            CarPartsManage carParts = new CarPartsManage();        
+            carParts.Show();   
         }
     }
 }

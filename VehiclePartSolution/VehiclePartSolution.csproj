@@ -59,6 +59,12 @@
     <Compile Include="CarManage.Designer.cs">
       <DependentUpon>CarManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarPartsManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarPartsManage.Designer.cs">
+      <DependentUpon>CarPartsManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarManage.resx">
       <DependentUpon>CarManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarPartsManage.resx">
+      <DependentUpon>CarPartsManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
