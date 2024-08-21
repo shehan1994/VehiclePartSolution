@@ -52,6 +52,17 @@ namespace VehiclePartSolution
                 DataTable carListTable = new DataTable();
                 adapter.Fill(carListTable);
                 GridViewCars.DataSource = carListTable;
+                GridViewCars.Columns["car_id"].Visible = false;
+
+                GridViewCars.Columns["brand"].HeaderText = "Brand";
+                GridViewCars.Columns["brand"].Width = 200;
+                GridViewCars.Columns["model"].HeaderText = "Model";
+                GridViewCars.Columns["model"].Width = 200;
+                GridViewCars.Columns["price"].HeaderText = "Price";
+                GridViewCars.Columns["price"].Width = 150;
+                GridViewCars.Columns["year"].HeaderText = "Year";
+                GridViewCars.Columns["year"].Width = 150;
+                GridViewCars.Columns["stock"].HeaderText = "Stock";
             }
         }
 
@@ -171,6 +182,11 @@ namespace VehiclePartSolution
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }
