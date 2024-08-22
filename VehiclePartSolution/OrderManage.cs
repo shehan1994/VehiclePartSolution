@@ -17,14 +17,16 @@ namespace VehiclePartSolution
         private string connection_string;
         public OrderManage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             connection_string = ConfigurationManager.ConnectionStrings["DB_Connection_String"].ConnectionString;
+            InitializeDataGridView();
             LoadCarInCars();
             LoadCarInParts();
             ClearFields();
             comboBoxCarInParts.SelectedIndexChanged += new EventHandler(comboBoxCarInParts_SelectedIndexChanged);
             comboBoxCarInCar.SelectedIndexChanged += new EventHandler(comboBoxCarInCar_SelectedIndexChanged); 
             comboBoxParts.SelectedIndexChanged += new EventHandler(comboBoxParts_SelectedIndexChanged);
+
         }
 
         private void ClearFields()
@@ -39,6 +41,16 @@ namespace VehiclePartSolution
             btnDelete.Visible = false;
             btnEdit.Visible = false;
             btnSave.Visible = true;*/
+        }
+
+        private void InitializeDataGridView()
+        {
+            dataGridViewCarParts.ColumnCount = 5;
+            dataGridViewCarParts.Columns[0].Name = "Item";
+            dataGridViewCarParts.Columns[1].Name = "Description";
+            dataGridViewCarParts.Columns[2].Name = "Price";
+            dataGridViewCarParts.Columns[3].Name = "Quantity";
+            dataGridViewCarParts.Columns[4].Name = "Subtotal";
         }
 
         private void LoadCarInCars()
@@ -220,6 +232,41 @@ namespace VehiclePartSolution
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddtoCartInCar_Click(object sender, EventArgs e)
+        {
+            if (numOrderStockInCar.Value <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity greater than zero for the car.");
+                return;
+            }
+
+            //string item = comboBoxCarInCar.SelectedValue?.ToString() ?? "cars";
+            string item = comboBoxCarInCar.Text ?? "cars";
+            string description = txtModelInCar.Text;
+            decimal price = numPriceInCar.Value;
+            decimal quantity = numOrderStockInCar.Value;
+            decimal subtotal = price * quantity;
+
+            dataGridViewCarParts.Rows.Add(item, description, price, quantity, subtotal);
+        }
+
+        private void btnAddtoCartInParts_Click(object sender, EventArgs e)
+        {
+            if (numOrderStockInParts.Value <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity greater than zero for the parts.");
+                return;
+            }
+
+            string item = comboBoxCarInParts.Text ?? "parts";
+            string description = $"{comboBoxParts.Text} - {txtRemarkInParts.Text}";
+            decimal price = numPriceInParts.Value;
+            decimal quantity = numOrderStockInParts.Value;
+            decimal subtotal = price * quantity;
+
+            dataGridViewCarParts.Rows.Add(item, description, price, quantity, subtotal);
         }
     }
 }

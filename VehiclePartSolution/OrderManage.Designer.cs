@@ -57,12 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCarInParts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.GridViewCarParts = new System.Windows.Forms.DataGridView();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sub_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCarParts = new System.Windows.Forms.DataGridView();
             this.btnTableClear = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.comboBoxParts = new System.Windows.Forms.ComboBox();
@@ -77,7 +72,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewCarParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).BeginInit();
             this.SuspendLayout();
@@ -148,6 +143,7 @@
             this.btnAddtoCartInCar.TabIndex = 65;
             this.btnAddtoCartInCar.Text = "Add To Cart";
             this.btnAddtoCartInCar.UseVisualStyleBackColor = false;
+            this.btnAddtoCartInCar.Click += new System.EventHandler(this.btnAddtoCartInCar_Click);
             // 
             // comboBoxCarInCar
             // 
@@ -299,6 +295,7 @@
             this.btnAddtoCartInParts.TabIndex = 63;
             this.btnAddtoCartInParts.Text = "Add To Cart";
             this.btnAddtoCartInParts.UseVisualStyleBackColor = false;
+            this.btnAddtoCartInParts.Click += new System.EventHandler(this.btnAddtoCartInParts_Click);
             // 
             // label8
             // 
@@ -398,11 +395,11 @@
             this.label2.TabIndex = 53;
             this.label2.Text = "Car :";
             // 
-            // GridViewCarParts
+            // dataGridViewCarParts
             // 
-            this.GridViewCarParts.AllowUserToAddRows = false;
-            this.GridViewCarParts.AllowUserToDeleteRows = false;
-            this.GridViewCarParts.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewCarParts.AllowUserToAddRows = false;
+            this.dataGridViewCarParts.AllowUserToDeleteRows = false;
+            this.dataGridViewCarParts.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -410,17 +407,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridViewCarParts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridViewCarParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewCarParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.item,
-            this.description,
-            this.price,
-            this.order_qty,
-            this.sub_total});
-            this.GridViewCarParts.Location = new System.Drawing.Point(404, 65);
-            this.GridViewCarParts.Name = "GridViewCarParts";
-            this.GridViewCarParts.ReadOnly = true;
+            this.dataGridViewCarParts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewCarParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCarParts.Location = new System.Drawing.Point(404, 65);
+            this.dataGridViewCarParts.Name = "dataGridViewCarParts";
+            this.dataGridViewCarParts.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -428,41 +419,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridViewCarParts.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridViewCarParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.GridViewCarParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridViewCarParts.Size = new System.Drawing.Size(523, 415);
-            this.GridViewCarParts.TabIndex = 59;
-            // 
-            // item
-            // 
-            this.item.HeaderText = "Item";
-            this.item.Name = "item";
-            this.item.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // order_qty
-            // 
-            this.order_qty.HeaderText = "Quantity";
-            this.order_qty.Name = "order_qty";
-            this.order_qty.ReadOnly = true;
-            // 
-            // sub_total
-            // 
-            this.sub_total.HeaderText = "Sub Total";
-            this.sub_total.Name = "sub_total";
-            this.sub_total.ReadOnly = true;
+            this.dataGridViewCarParts.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewCarParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dataGridViewCarParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCarParts.Size = new System.Drawing.Size(523, 415);
+            this.dataGridViewCarParts.TabIndex = 59;
             // 
             // btnTableClear
             // 
@@ -549,7 +510,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(946, 586);
             this.Controls.Add(this.btnTableClear);
-            this.Controls.Add(this.GridViewCarParts);
+            this.Controls.Add(this.dataGridViewCarParts);
             this.Controls.Add(this.btnPlaceOrder);
             this.Controls.Add(this.tabView);
             this.Controls.Add(this.label1);
@@ -564,7 +525,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewCarParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).EndInit();
             this.ResumeLayout(false);
@@ -577,7 +538,7 @@
         private System.Windows.Forms.TabControl tabView;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView GridViewCarParts;
+        private System.Windows.Forms.DataGridView dataGridViewCarParts;
         private System.Windows.Forms.ComboBox comboBoxCarInParts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -603,11 +564,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnClearInCar;
         private System.Windows.Forms.Button btnAddtoCartInCar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn order_qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sub_total;
         private System.Windows.Forms.ComboBox comboBoxParts;
         private System.Windows.Forms.NumericUpDown numOrderStockInCar;
         private System.Windows.Forms.Label label13;
