@@ -65,6 +65,7 @@
             this.Controls.Add(this.btnCarParts);
             this.Controls.Add(this.btnCar);
             this.Name = "AdminView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 

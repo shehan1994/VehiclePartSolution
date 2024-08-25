@@ -51,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(481, 327);
             this.Controls.Add(this.btnPlaceOrder);
             this.Name = "CustomerView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Portal";
             this.ResumeLayout(false);
 
