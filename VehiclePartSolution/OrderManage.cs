@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace VehiclePartSolution
 {
@@ -299,10 +300,25 @@ namespace VehiclePartSolution
                         {
                             decimal itemTypeId = Convert.ToDecimal(row.Cells["ItemTypeId"].Value);
                             orderDetailsCommand.Parameters["@ItemTypeId"].Value = itemTypeId;
+
+                            // Update Stock in CarParts
+                            string updatePartsStockQuery = "UPDATE CarParts SET stock = stock - @Quantity WHERE part_id = @ItemId AND car_id = @CarId";
+                            SqlCommand updatePartsStockCommand = new SqlCommand(updatePartsStockQuery, connection, transaction);
+                            updatePartsStockCommand.Parameters.AddWithValue("@Quantity", quantity);
+                            updatePartsStockCommand.Parameters.AddWithValue("@ItemId", itemId);
+                            updatePartsStockCommand.Parameters.AddWithValue("@CarId", itemTypeId);
+                            updatePartsStockCommand.ExecuteNonQuery();
                         }
                         else
                         {
-                            orderDetailsCommand.Parameters["@ItemTypeId"].Value = 0; 
+                            orderDetailsCommand.Parameters["@ItemTypeId"].Value = 0;
+
+                            // Update Stock in Cars
+                            string updateCarStockQuery = "UPDATE Cars SET stock = stock - @Quantity WHERE car_id = @ItemId";
+                            SqlCommand updateCarStockCommand = new SqlCommand(updateCarStockQuery, connection, transaction);
+                            updateCarStockCommand.Parameters.AddWithValue("@Quantity", quantity);
+                            updateCarStockCommand.Parameters.AddWithValue("@ItemId", itemId);
+                            updateCarStockCommand.ExecuteNonQuery();
                         }
 
                         orderDetailsCommand.ExecuteNonQuery();
@@ -365,7 +381,7 @@ namespace VehiclePartSolution
             decimal price = numPriceInParts.Value;
             decimal quantity = numOrderStockInParts.Value;
             decimal subtotal = price * quantity;
-            int item_code = comboBoxCarInParts.SelectedIndex+1;
+            int item_code = (int)comboBoxParts.SelectedValue;
             string itemType = "Parts";
             int carId = comboBoxCarInParts.SelectedIndex + 1;
             dataGridViewCarParts.Rows.Add(item, description, price, quantity, subtotal, item_code, itemType,carId);
