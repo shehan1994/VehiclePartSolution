@@ -394,5 +394,12 @@ namespace VehiclePartSolution
             dataGridViewCarParts.Rows.Clear(); 
             txtNetTotal.Text = string.Empty;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            CustomerView customerView = new CustomerView();
+            customerView.Show();
+            this.Close();
+        }
     }
 }

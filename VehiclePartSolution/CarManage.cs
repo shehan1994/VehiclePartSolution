@@ -188,5 +188,12 @@ namespace VehiclePartSolution
         {
             ClearFields();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminView admin = new AdminView();
+            admin.Show();
+            this.Close();
+        }
     }
 }

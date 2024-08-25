@@ -30,6 +30,7 @@
         {
             this.btnCarParts = new System.Windows.Forms.Button();
             this.btnCar = new System.Windows.Forms.Button();
+            this.btnLoginOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCarParts
@@ -56,17 +57,30 @@
             this.btnCar.UseVisualStyleBackColor = false;
             this.btnCar.Click += new System.EventHandler(this.btnCar_Click);
             // 
-            // AdminView
+            // btnLoginOut
+            // 
+            this.btnLoginOut.BackColor = System.Drawing.Color.White;
+            this.btnLoginOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoginOut.Location = new System.Drawing.Point(702, 3);
+            this.btnLoginOut.Name = "btnLoginOut";
+            this.btnLoginOut.Size = new System.Drawing.Size(86, 32);
+            this.btnLoginOut.TabIndex = 4;
+            this.btnLoginOut.Text = "Log Out";
+            this.btnLoginOut.UseVisualStyleBackColor = false;
+            this.btnLoginOut.Click += new System.EventHandler(this.btnLoginOut_Click);
+            // 
+            // btnLogout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoginOut);
             this.Controls.Add(this.btnCarParts);
             this.Controls.Add(this.btnCar);
-            this.Name = "AdminView";
+            this.Name = "btnLogout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Addmin View";
             this.ResumeLayout(false);
 
         }
@@ -75,5 +89,6 @@
 
         private System.Windows.Forms.Button btnCarParts;
         private System.Windows.Forms.Button btnCar;
+        private System.Windows.Forms.Button btnLoginOut;
     }
 }
