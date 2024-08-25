@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.numOrderStockInCar = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnClearInCar = new System.Windows.Forms.Button();
             this.btnAddtoCartInCar = new System.Windows.Forms.Button();
             this.comboBoxCarInCar = new System.Windows.Forms.ComboBox();
@@ -46,6 +48,9 @@
             this.txtModelInCar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.numOrderStockInParts = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBoxParts = new System.Windows.Forms.ComboBox();
             this.btnClearInParts = new System.Windows.Forms.Button();
             this.btnAddtoCartInParts = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,21 +65,18 @@
             this.dataGridViewCarParts = new System.Windows.Forms.DataGridView();
             this.btnTableClear = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
-            this.comboBoxParts = new System.Windows.Forms.ComboBox();
-            this.numOrderStockInParts = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numOrderStockInCar = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
+            this.txtNetTotal = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabView.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInCar)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,6 +123,29 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Car Order";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // numOrderStockInCar
+            // 
+            this.numOrderStockInCar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numOrderStockInCar.Location = new System.Drawing.Point(93, 263);
+            this.numOrderStockInCar.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numOrderStockInCar.Name = "numOrderStockInCar";
+            this.numOrderStockInCar.Size = new System.Drawing.Size(239, 26);
+            this.numOrderStockInCar.TabIndex = 68;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(32, 265);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 19);
+            this.label13.TabIndex = 67;
+            this.label13.Text = "Stock :";
             // 
             // btnClearInCar
             // 
@@ -273,6 +298,38 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Parts Order";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // numOrderStockInParts
+            // 
+            this.numOrderStockInParts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numOrderStockInParts.Location = new System.Drawing.Point(94, 297);
+            this.numOrderStockInParts.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numOrderStockInParts.Name = "numOrderStockInParts";
+            this.numOrderStockInParts.Size = new System.Drawing.Size(244, 26);
+            this.numOrderStockInParts.TabIndex = 67;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(11, 299);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 19);
+            this.label12.TabIndex = 66;
+            this.label12.Text = "A / Stock :";
+            // 
+            // comboBoxParts
+            // 
+            this.comboBoxParts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxParts.FormattingEnabled = true;
+            this.comboBoxParts.Location = new System.Drawing.Point(94, 80);
+            this.comboBoxParts.Name = "comboBoxParts";
+            this.comboBoxParts.Size = new System.Drawing.Size(244, 27);
+            this.comboBoxParts.TabIndex = 65;
             // 
             // btnClearInParts
             // 
@@ -429,18 +486,19 @@
             // 
             this.btnTableClear.BackColor = System.Drawing.Color.White;
             this.btnTableClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTableClear.Location = new System.Drawing.Point(707, 501);
+            this.btnTableClear.Location = new System.Drawing.Point(707, 568);
             this.btnTableClear.Name = "btnTableClear";
             this.btnTableClear.Size = new System.Drawing.Size(97, 30);
             this.btnTableClear.TabIndex = 66;
             this.btnTableClear.Text = "Clear Items";
             this.btnTableClear.UseVisualStyleBackColor = false;
+            this.btnTableClear.Click += new System.EventHandler(this.btnTableClear_Click);
             // 
             // btnPlaceOrder
             // 
             this.btnPlaceOrder.BackColor = System.Drawing.Color.White;
             this.btnPlaceOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaceOrder.Location = new System.Drawing.Point(810, 501);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(810, 568);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(117, 30);
             this.btnPlaceOrder.TabIndex = 65;
@@ -448,67 +506,34 @@
             this.btnPlaceOrder.UseVisualStyleBackColor = false;
             this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
-            // comboBoxParts
+            // txtNetTotal
             // 
-            this.comboBoxParts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxParts.FormattingEnabled = true;
-            this.comboBoxParts.Location = new System.Drawing.Point(94, 80);
-            this.comboBoxParts.Name = "comboBoxParts";
-            this.comboBoxParts.Size = new System.Drawing.Size(244, 27);
-            this.comboBoxParts.TabIndex = 65;
+            this.txtNetTotal.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNetTotal.Location = new System.Drawing.Point(707, 530);
+            this.txtNetTotal.Name = "txtNetTotal";
+            this.txtNetTotal.ReadOnly = true;
+            this.txtNetTotal.Size = new System.Drawing.Size(220, 32);
+            this.txtNetTotal.TabIndex = 69;
             // 
-            // numOrderStockInParts
+            // label14
             // 
-            this.numOrderStockInParts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOrderStockInParts.Location = new System.Drawing.Point(94, 297);
-            this.numOrderStockInParts.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numOrderStockInParts.Name = "numOrderStockInParts";
-            this.numOrderStockInParts.Size = new System.Drawing.Size(244, 26);
-            this.numOrderStockInParts.TabIndex = 67;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(11, 299);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 19);
-            this.label12.TabIndex = 66;
-            this.label12.Text = "A / Stock :";
-            // 
-            // numOrderStockInCar
-            // 
-            this.numOrderStockInCar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numOrderStockInCar.Location = new System.Drawing.Point(93, 263);
-            this.numOrderStockInCar.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numOrderStockInCar.Name = "numOrderStockInCar";
-            this.numOrderStockInCar.Size = new System.Drawing.Size(239, 26);
-            this.numOrderStockInCar.TabIndex = 68;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(32, 265);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 19);
-            this.label13.TabIndex = 67;
-            this.label13.Text = "Stock :";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(759, 496);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 31);
+            this.label14.TabIndex = 69;
+            this.label14.Text = "Net Total";
             // 
             // OrderManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 586);
+            this.ClientSize = new System.Drawing.Size(951, 610);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtNetTotal);
             this.Controls.Add(this.btnTableClear);
             this.Controls.Add(this.dataGridViewCarParts);
             this.Controls.Add(this.btnPlaceOrder);
@@ -519,15 +544,15 @@
             this.tabView.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInCar)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPriceInParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailableStockInParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderStockInCar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +594,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numOrderStockInParts;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtNetTotal;
+        private System.Windows.Forms.Label label14;
     }
 }
