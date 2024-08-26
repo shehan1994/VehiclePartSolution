@@ -56,15 +56,6 @@ namespace VehiclePartSolution
                     // Handle the case where there are no records
                     MessageBox.Show("No order history found for this customer.");
                 }
-
-                
-                /*gridViewOrderHistory.Columns["model"].HeaderText = "Model";
-                gridViewOrderHistory.Columns["model"].Width = 200;
-                gridViewOrderHistory.Columns["price"].HeaderText = "Price";
-                gridViewOrderHistory.Columns["price"].Width = 150;
-                gridViewOrderHistory.Columns["year"].HeaderText = "Year";
-                gridViewOrderHistory.Columns["year"].Width = 150;
-                gridViewOrderHistory.Columns["stock"].HeaderText = "Stock";*/
             }
         }
 
