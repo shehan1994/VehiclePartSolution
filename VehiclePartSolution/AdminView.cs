@@ -167,8 +167,9 @@ namespace VehiclePartSolution
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
-            register.Show();
+            UserManage userManage = new UserManage();  
+            userManage.Show();
+            this.Close();
         }
     }
 }

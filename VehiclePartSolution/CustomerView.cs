@@ -32,7 +32,6 @@ namespace VehiclePartSolution
                     " o.[total_price]  FROM [Orders] o " +
                     "JOIN [Order_details] od ON o.[order_id] = od.[order_id] " +
                     "JOIN [SYS_Users] u ON o.[customer_id] = u.[user_id] WHERE o.[customer_id] = "+LoggerSession.user_id;
-                Console.WriteLine("sql :"+query);
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable orderListTable = new DataTable();
                 adapter.Fill(orderListTable);
