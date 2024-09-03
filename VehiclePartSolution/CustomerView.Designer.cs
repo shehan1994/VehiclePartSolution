@@ -111,6 +111,7 @@
             this.Controls.Add(this.gridViewOrderHistory);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnPlaceOrder);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CustomerView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Portal";

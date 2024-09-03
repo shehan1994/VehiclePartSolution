@@ -195,5 +195,10 @@ namespace VehiclePartSolution
             admin.Show();
             this.Close();
         }
+
+        private void CarManage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

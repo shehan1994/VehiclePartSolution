@@ -132,6 +132,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.GridViewUsers);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "UserManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Manage";

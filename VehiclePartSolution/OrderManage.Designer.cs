@@ -553,6 +553,7 @@
             this.Controls.Add(this.btnPlaceOrder);
             this.Controls.Add(this.tabView);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "OrderManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderManage";
