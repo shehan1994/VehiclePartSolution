@@ -169,6 +169,7 @@ namespace VehiclePartSolution
                         command.ExecuteNonQuery();
                         MessageBox.Show("Car edited successfully!");
                         ClearFields();
+                        LoadUsers();
                     }
                 }
                 catch (Exception ex)
@@ -177,6 +178,11 @@ namespace VehiclePartSolution
                 }
 
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }
