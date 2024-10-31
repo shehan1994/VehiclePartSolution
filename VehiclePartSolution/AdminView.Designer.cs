@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminView));
             this.btnCarParts = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnCars = new System.Windows.Forms.Button();
             this.btnLoginOut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnOrders = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDash = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lableCustomers = new System.Windows.Forms.Label();
@@ -83,17 +84,17 @@
             this.btnCarParts.UseVisualStyleBackColor = false;
             this.btnCarParts.Click += new System.EventHandler(this.btnCarParts_Click);
             // 
-            // btnDashboard
+            // btnCars
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.White;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.Location = new System.Drawing.Point(3, 105);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(220, 40);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "Cars Manage";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnCar_Click);
+            this.btnCars.BackColor = System.Drawing.Color.White;
+            this.btnCars.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCars.Location = new System.Drawing.Point(3, 105);
+            this.btnCars.Name = "btnCars";
+            this.btnCars.Size = new System.Drawing.Size(220, 40);
+            this.btnCars.TabIndex = 2;
+            this.btnCars.Text = "Cars Manage";
+            this.btnCars.UseVisualStyleBackColor = false;
+            this.btnCars.Click += new System.EventHandler(this.btnCar_Click);
             // 
             // btnLoginOut
             // 
@@ -131,14 +132,27 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.btnOrders);
             this.panel2.Controls.Add(this.btnSignUp);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnDashboard);
+            this.panel2.Controls.Add(this.btnDash);
+            this.panel2.Controls.Add(this.btnCars);
             this.panel2.Controls.Add(this.btnCarParts);
             this.panel2.Location = new System.Drawing.Point(-2, 51);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 581);
             this.panel2.TabIndex = 6;
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.BackColor = System.Drawing.Color.White;
+            this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Location = new System.Drawing.Point(3, 197);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(220, 40);
+            this.btnOrders.TabIndex = 6;
+            this.btnOrders.Text = "Order Manager";
+            this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnSignUp
             // 
@@ -152,16 +166,16 @@
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // button1
+            // btnDash
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDash.BackColor = System.Drawing.Color.White;
+            this.btnDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDash.Location = new System.Drawing.Point(3, 14);
+            this.btnDash.Name = "btnDash";
+            this.btnDash.Size = new System.Drawing.Size(220, 40);
+            this.btnDash.TabIndex = 4;
+            this.btnDash.Text = "Dashboard";
+            this.btnDash.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -420,12 +434,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnCarParts;
-        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnCars;
         private System.Windows.Forms.Button btnLoginOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDash;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lableCustomers;
@@ -447,5 +461,6 @@
         private System.Windows.Forms.Label lablesOrder;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Button btnOrders;
     }
 }

@@ -71,7 +71,7 @@
             this.numPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numPrice.Location = new System.Drawing.Point(193, 133);
             this.numPrice.Maximum = new decimal(new int[] {
-            100000,
+            1000000,
             0,
             0,
             0});

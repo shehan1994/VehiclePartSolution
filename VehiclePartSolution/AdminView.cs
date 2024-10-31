@@ -171,5 +171,12 @@ namespace VehiclePartSolution
             userManage.Show();
             this.Close();
         }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            AdminCustomerOrderManage adminCustomerOrderManage = new AdminCustomerOrderManage();
+            adminCustomerOrderManage.Show();
+            this.Close();
+        }
     }
 }
